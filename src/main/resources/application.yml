@@ -1,0 +1,39 @@
+# SPRING H2 AND JPA PROPERTIES
+spring:
+  datasource:
+    url: jdbc:h2:mem:betdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+
+# SERVER PROPERTIES
+server:
+  port: 8085
+  servlet:
+    context-path: /
+
+# KAFKA PROPERTIES
+kafka:
+  topic: event-outcomes
+  bootstrap-servers: localhost:9092
+  consumer:
+    group-id: event-outcomes-consumer
+
+# ROCKETMQ PROPERTIES
+rocketmq:
+  mock:
+    topic: bet-settlements
+
+# LOGGING PROPERTIES
+logging:
+  level:
+    root: INFO
